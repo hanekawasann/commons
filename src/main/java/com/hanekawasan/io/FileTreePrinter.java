@@ -10,7 +10,7 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 
 /**
- * 灵感来源于多本技术书籍的文件目录说明
+ * 灵感来源于多本技术书籍的文件目录说明，类名来源于mvn dependency:tree，这也是默认格式，除了默认格式，也支持完全的客制化。
  * @author yukms 2019/1/03.
  */
 public final class FileTreePrinter {
