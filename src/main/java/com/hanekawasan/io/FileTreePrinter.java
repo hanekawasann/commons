@@ -10,6 +10,7 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 
 /**
+ * 灵感来源于多本技术书籍的文件目录说明
  * @author yukms 2019/1/03.
  */
 public final class FileTreePrinter {
