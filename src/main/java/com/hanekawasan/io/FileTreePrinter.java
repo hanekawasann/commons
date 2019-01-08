@@ -11,16 +11,29 @@ import java.util.function.Function;
 
 /**
  * 灵感来源于多本技术书籍的文件目录说明，类名来源于mvn dependency:tree，这也是默认格式，除了默认格式，也支持完全的客制化。
+ *
  * @author yukms 2019/1/03.
  */
 public final class FileTreePrinter {
+    /** 根文件 */
     private File root;
+    /** 文件排序策略 */
     private Comparator<File> comparator = FileTreePrinter::filePriority;
+    /** 文件过滤策略 */
     private FilenameFilter fileNameFilter = FileTreePrinter::showAll;
+    /** 树打印策略 */
     private BiFunction<Boolean[], File, String> treePrinter = TreePrinter.create();
+    /** 文件打印策略 */
     private Function<File, String> filePrinter = file -> file.getName() + "\n";
+    /** 输出流 */
     private PrintStream out = System.out;
 
+    /**
+     * 通过路径创建FileTreePrinter
+     *
+     * @param path 文件绝对路径
+     * @return FileTreePrinter
+     */
     public static FileTreePrinter path(String path) {
         Objects.requireNonNull(path, "path");
         File file = new File(path);
@@ -30,34 +43,71 @@ public final class FileTreePrinter {
         return new FileTreePrinter(file);
     }
 
+    /**
+     * 打印
+     */
     public void print() {
         print(new Boolean[] { Boolean.FALSE }, root);
     }
 
+    /**
+     * 设置文件排序规则，默认按照文件优先于文件夹排序。
+     *
+     * @param comparator 文件过滤，不能为空
+     * @return FileTreePrinter
+     * @see Comparator
+     */
     public FileTreePrinter comparator(Comparator<File> comparator) {
         Objects.requireNonNull(comparator, "comparator");
         this.comparator = comparator;
         return this;
     }
 
+    /**
+     * 设置文件过滤规则，默认不过滤。
+     *
+     * @param fileNameFilter 不能为空
+     * @return FileTreePrinter
+     * @see FilenameFilter
+     */
     public FileTreePrinter fileNameFilter(FilenameFilter fileNameFilter) {
         Objects.requireNonNull(fileNameFilter, "fileNameFilter");
         this.fileNameFilter = fileNameFilter;
         return this;
     }
 
+    /**
+     * 设置树打印策略。
+     *
+     * @param treePrinter 不能为空
+     * @return FileTreePrinter
+     * @see BiFunction
+     */
     public FileTreePrinter treePrinter(BiFunction<Boolean[], File, String> treePrinter) {
         Objects.requireNonNull(treePrinter, "treePrinter");
         this.treePrinter = treePrinter;
         return this;
     }
 
+    /**
+     * 设置文件打印策略，默认打印文件名。
+     *
+     * @param filePrinter 不能为空
+     * @return FileTreePrinter
+     * @see Function
+     */
     public FileTreePrinter filePrinter(Function<File, String> filePrinter) {
         Objects.requireNonNull(filePrinter, "filePrinter");
         this.filePrinter = filePrinter;
         return this;
     }
 
+    /**
+     * 设置输出流，默认打印输出流。
+     *
+     * @param out 不能为空
+     * @return FileTreePrinter
+     */
     public FileTreePrinter out(PrintStream out) {
         Objects.requireNonNull(out, "out");
         this.out = out;

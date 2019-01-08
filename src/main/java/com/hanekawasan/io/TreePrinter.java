@@ -23,6 +23,10 @@ public final class TreePrinter implements BiFunction<Boolean[], File, String> {
     /** 最后一个节点 */
     private String lastNode = "\\";
 
+    /**
+     * 创建树打印器
+     * @return 默认的TreePrinter
+     */
     public static TreePrinter create() {
         return new TreePrinter();
     }
@@ -50,27 +54,57 @@ public final class TreePrinter implements BiFunction<Boolean[], File, String> {
         return sb.toString();
     }
 
+    /**
+     * 设置竖枝干
+     *
+     * @param verticalBranch 竖枝干
+     * @return TreePrinter
+     */
     public TreePrinter verticalBranch(String verticalBranch) {
         this.verticalBranch = verticalBranch;
         Stream.generate(() -> " ").limit(verticalBranch.length()).forEach(s -> this.blockVerticalBranch += s);
         return this;
     }
 
+    /**
+     * 设置枝干层级
+     *
+     * @param branchLevel 枝干层级
+     * @return TreePrinter
+     */
     public TreePrinter branchLevel(String branchLevel) {
         this.branchLevel = branchLevel;
         return this;
     }
 
+    /**
+     * 设置横枝干
+     *
+     * @param crossBranch 横枝干
+     * @return TreePrinter
+     */
     public TreePrinter crossBranch(String crossBranch) {
         this.crossBranch = crossBranch;
         return this;
     }
 
+    /**
+     * 设置节点
+     *
+     * @param node 节点
+     * @return TreePrinter
+     */
     public TreePrinter node(String node) {
         this.node = node;
         return this;
     }
 
+    /**
+     * 设置最后一个节点
+     *
+     * @param lastNode 最后一个节点
+     * @return TreePrinter
+     */
     public TreePrinter lastNode(String lastNode) {
         this.lastNode = lastNode;
         return this;
