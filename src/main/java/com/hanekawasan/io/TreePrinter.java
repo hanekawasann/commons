@@ -25,6 +25,7 @@ public final class TreePrinter implements BiFunction<Boolean[], File, String> {
 
     /**
      * 创建树打印器
+     *
      * @return 默认的TreePrinter
      */
     public static TreePrinter create() {
