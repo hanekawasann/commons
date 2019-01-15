@@ -53,7 +53,7 @@ public final class FileTreePrinter {
     /**
      * 设置文件排序规则，默认按照文件优先于文件夹排序。
      *
-     * @param comparator 文件过滤，不能为空
+     * @param comparator 不能为null
      * @return FileTreePrinter
      * @see Comparator
      */
@@ -66,7 +66,7 @@ public final class FileTreePrinter {
     /**
      * 设置文件过滤规则，默认不过滤。
      *
-     * @param fileNameFilter 不能为空
+     * @param fileNameFilter 不能为null
      * @return FileTreePrinter
      * @see FilenameFilter
      */
@@ -79,7 +79,7 @@ public final class FileTreePrinter {
     /**
      * 设置树打印策略。
      *
-     * @param treePrinter 不能为空
+     * @param treePrinter 不能为null
      * @return FileTreePrinter
      * @see BiFunction
      */
@@ -92,7 +92,7 @@ public final class FileTreePrinter {
     /**
      * 设置文件打印策略，默认打印文件名。
      *
-     * @param filePrinter 不能为空
+     * @param filePrinter 不能为null
      * @return FileTreePrinter
      * @see Function
      */
@@ -105,7 +105,7 @@ public final class FileTreePrinter {
     /**
      * 设置输出流，默认打印输出流。
      *
-     * @param out 不能为空
+     * @param out 不能为null
      * @return FileTreePrinter
      */
     public FileTreePrinter out(PrintStream out) {
