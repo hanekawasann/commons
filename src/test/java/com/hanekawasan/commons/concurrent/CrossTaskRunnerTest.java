@@ -1,4 +1,4 @@
-package com.hanekawasan.concurrent;
+package com.hanekawasan.commons.concurrent;
 
 import java.util.concurrent.ExecutionException;
 
