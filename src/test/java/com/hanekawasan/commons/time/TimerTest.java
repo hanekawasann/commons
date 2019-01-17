@@ -43,15 +43,15 @@ public class TimerTest {
 
     @Test
     public void test_printlnCompare() throws InterruptedException {
-        Timer test1 = Timer.start("test1");
+        Timer timer1 = Timer.start("timer1");
         Thread.sleep(1);
-        test1.end();
-        Timer test2 = Timer.start("test2");
+        timer1.end();
+        Timer timer2 = Timer.start("timer2");
         Thread.sleep(10);
-        test2.end();
-        test1.printlnCompare(test1);
-        test1.printlnCompare(test2);
-        test2.printlnCompare(test1);
+        timer2.end();
+        timer1.printlnCompare(timer1);
+        timer1.printlnCompare(timer2);
+        timer2.printlnCompare(timer1);
     }
 
     @Test(expected = NullPointerException.class)
