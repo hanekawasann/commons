@@ -38,7 +38,7 @@ public final class AverageTimer {
         }
         timer.end();
         Duration duration = timer.getDuration();
-            System.out.println(
+        System.out.println(
             "The average time of the " + name + " is " + duration.get(unit) / times + " " + unit.toString() + ".");
     }
 
