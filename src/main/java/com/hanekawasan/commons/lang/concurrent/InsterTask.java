@@ -1,4 +1,4 @@
-package com.hanekawasan.commons.concurrent;
+package com.hanekawasan.commons.lang.concurrent;
 
 /**
  * 插入任务

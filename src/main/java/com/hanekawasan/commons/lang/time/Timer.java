@@ -1,4 +1,4 @@
-package com.hanekawasan.commons.time;
+package com.hanekawasan.commons.lang.time;
 
 import java.text.MessageFormat;
 import java.time.Duration;

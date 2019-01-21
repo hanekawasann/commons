@@ -1,4 +1,4 @@
-package com.hanekawasan.commons.io;
+package com.hanekawasan.commons.lang.io;
 
 import java.io.File;
 import java.io.FilenameFilter;
