@@ -1,4 +1,4 @@
-package com.hanekawasan.commons.lang.parser.entity;
+package com.hanekawasan.commons.lang.file.parser.entity;
 
 import com.hanekawasan.commons.lang.exception.NoSuchEnumMappingException;
 import lombok.Getter;

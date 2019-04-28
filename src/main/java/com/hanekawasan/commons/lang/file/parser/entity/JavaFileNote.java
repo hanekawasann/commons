@@ -1,4 +1,4 @@
-package com.hanekawasan.commons.lang.parser.entity;
+package com.hanekawasan.commons.lang.file.parser.entity;
 
 import java.io.Serializable;
 

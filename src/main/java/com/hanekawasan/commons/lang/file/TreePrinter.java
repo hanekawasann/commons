@@ -1,4 +1,4 @@
-package com.hanekawasan.commons.lang.io;
+package com.hanekawasan.commons.lang.file;
 
 import java.io.File;
 import java.util.function.BiFunction;

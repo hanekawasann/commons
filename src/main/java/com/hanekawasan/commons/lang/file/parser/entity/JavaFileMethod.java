@@ -1,4 +1,4 @@
-package com.hanekawasan.commons.lang.parser.entity;
+package com.hanekawasan.commons.lang.file.parser.entity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -26,4 +26,6 @@ public class JavaFileMethod implements Serializable {
     private List<JavaFileParam> params = new ArrayList<>();
     /** 异常 */
     private List<String> exceptions = new ArrayList<>();
+    /** 方法全部内容 */
+    private String text;
 }
