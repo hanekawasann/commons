@@ -44,6 +44,11 @@ public class Timer implements Comparable<Timer> {
         duration = Duration.between(start, end);
     }
 
+    public void endAndPrint() {
+        end();
+        print();
+    }
+
     /**
      * 重新开始计时
      */
