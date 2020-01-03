@@ -2,6 +2,7 @@ package com.hanekawasan.commons.lang;
 
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.Optional;
 import java.util.TreeMap;
 import java.util.function.Function;
 
@@ -17,8 +18,8 @@ public final class CollectionSearcher<T, R> {
         this.map = map;
     }
 
-    public R get(T t) {
-        return map.get(t);
+    public Optional<R> search(T t) {
+        return Optional.ofNullable(map.get(t));
     }
 
     public static <T, R> CollectionSearcher<T, R> newInstance(Collection<R> collection,
@@ -37,5 +38,15 @@ public final class CollectionSearcher<T, R> {
             map.put(function.apply(r), r);
         }
         return new CollectionSearcher<>(map);
+    }
+
+    public static <T, R> Optional<R> search(T t, Collection<R> mapping, Function<? super R, T> rMapper) {
+        for (R r : mapping) {
+            T rm = rMapper.apply(r);
+            if (t.equals(rm)) {
+                return Optional.ofNullable(r);
+            }
+        }
+        return Optional.empty();
     }
 }
